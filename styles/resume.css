@@ -20,9 +20,9 @@ body {
 }
 
 .wrapper {
+  height: 1838px;
   background-color: var(--clr-bg);
   display: grid;
-  overflow: hidden;
   position: relative;
   /* place-content: center; */
 
@@ -42,14 +42,50 @@ header {
 }
 
 header::before {
+}
+
+.bg {
+  position: absolute;
+  filter: drop-shadow(0 5px 5px white);
+}
+
+.bg::before {
   content: "";
   position: absolute;
-  inset: 0;
+  left: 0;
   width: 100vw;
   height: 65vh;
   background-image: linear-gradient(#004b6b, #c00086);
-  transform: translateY(-120px) skewY(-6deg);
-  box-shadow: 0 0 15px 5px white;
+  /* transform: translateY(-120px) skewY(-6deg); */
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.head {
+}
+
+nav {
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  background-color: rgba(128, 128, 128, 0.301);
+  border-radius: 100vh;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    background-clip: text;
+    background-image: linear-gradient(to right, #00b3ff, #c00086);
+    color: transparent;
+  }
 }
 
 .main {
@@ -59,21 +95,26 @@ header::before {
 footer::before {
   content: "";
   position: absolute;
-  left: 0;
-  width: 200vw;
-  height: 100vh;
+  width: 100vw;
+  height: 50vh;
   background-image: linear-gradient(#c00086, #004b6b);
-  transform: translate(-350px, -1500px) skewY(-6deg);
-  box-shadow: 0 0 15px 5px white;
+  clip-path: polygon(0 26%, 100% 0, 100% 100%, 0 100%);
+}
+
+.bottom {
+  /* overflow: hidden; */
+  position: absolute;
+  filter: drop-shadow(0 -5px 5px white);
+  bottom: 1475px;
   animation: 2s ease-in 500ms forwards open;
 }
 
 @keyframes open {
   from {
-    transform: translate(-350px, -1500px) skewY(-6deg);
+    bottom: 1475px;
   }
   to {
-    transform: translate(-350px, -200px) skewY(-6deg);
+    bottom: 200px;
   }
 }
 

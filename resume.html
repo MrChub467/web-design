@@ -8,13 +8,24 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <img src="./img/me.jpg" alt="" />
-        <div class="head">
-          <h1>Elijah Ellis</h1>
-          <p>A software developer and <br />frontend friend</p>
-        </div>
-      </header>
+      <div class="bg"></div>
+      <div class="head">
+        <header>
+          <nav>
+            <ul>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#acaExp">School</a></li>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#honors">Honors</a></li>
+            </ul>
+          </nav>
+          <img src="./img/me.jpg" alt="" />
+          <div class="head">
+            <h1>Elijah Ellis</h1>
+            <p>A software developer and <br />frontend friend</p>
+          </div>
+        </header>
+      </div>
       <div class="main">
         <div>
           <p>
@@ -26,7 +37,7 @@
           </p>
         </div>
         <div>
-          <h2>Skills</h2>
+          <h2 id="skills">Skills</h2>
           <ul>
             <li>Written and verbal communication</li>
             <li>Time management and work prioritization</li>
@@ -51,7 +62,7 @@
           </ul>
         </div>
         <div>
-          <h2>Academic Experience</h2>
+          <h2 id="acaExp">Academic Experience</h2>
           <div>
             <h3>Computer Labs</h3>
             <ul>
@@ -88,7 +99,7 @@
           </div>
         </div>
         <div>
-          <h2>Work Experience</h2>
+          <h2 id="work">Work Experience</h2>
           <ul>
             <li>
               Ray's Tire: Stacked tires, took inventory, custodian, general
@@ -99,7 +110,7 @@
           </ul>
         </div>
         <div>
-          <h2>Honors and Achievements</h2>
+          <h2 id="honors">Honors and Achievements</h2>
           <ul>
             <li>Dean’s List at Bethany Lutheran College, multiple semesters</li>
             <li>
@@ -111,7 +122,9 @@
           </ul>
         </div>
       </div>
-      <footer></footer>
+      <div class="bottom">
+        <footer></footer>
+      </div>
     </div>
   </body>
 </html>
