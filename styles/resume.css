@@ -88,10 +88,6 @@ nav a {
   }
 }
 
-.main {
-  /* visibility: collapse; */
-}
-
 footer::before {
   content: "";
   position: absolute;
