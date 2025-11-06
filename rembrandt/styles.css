@@ -22,9 +22,13 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(47, 47, 47);
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  position: relative;
 }
 
 .navbar {
@@ -58,15 +62,71 @@ body {
 
 .navbar a {
   color: white;
+  text-decoration: none;
+  position: relative;
+  transition: all 1s ease-in-out;
 
-  &:hover {
-    color: #1d1915;
-    transition: color 0.5s;
+  &:hover::after {
+    animation: slide-right 200ms 1 forwards;
+  }
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  animation: slide-left 200ms 1;
+}
+
+@keyframes slide-right {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes slide-left {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
   }
 }
 
 .scrolled {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  transform: translateY(-170px);
+  animation: appear 3s infinite;
+}
+
+.arrow > p {
+  transform: rotate(-45deg);
+  margin-top: -10px;
+  /* font-size: 1.25rem; */
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-100% - 170px));
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-170px);
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .header {
