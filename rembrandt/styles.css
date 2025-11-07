@@ -19,6 +19,7 @@
   --fs-600: 1.5rem;
   --fs-700: 2rem;
   --fs-800: 3.5rem;
+  --fs-900: 4.5rem;
 }
 
 body {
@@ -33,6 +34,7 @@ body {
 
 .navbar {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: var(--padding-300) var(--padding-700);
@@ -53,6 +55,7 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: var(--gap-value);
 
   & li {
@@ -134,7 +137,7 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: var(--padding-500);
+  padding: var(--padding-700);
   margin-bottom: var(--padding-700);
 }
 
@@ -158,9 +161,16 @@ body {
 }
 
 .header h1 {
-  font-size: var(--fs-800);
+  font-family: "Great Vibes", cursive;
+  font-size: var(--fs-900);
+  /* letter-spacing: 10px; */
   line-height: 1;
   margin-bottom: var(--padding-500);
+  /* white-space: nowrap; */
+}
+
+span {
+  white-space: nowrap;
 }
 
 .header p {
@@ -172,23 +182,13 @@ body {
   margin: 0 auto;
 }
 
-@media (min-width: 50em) {
-  .main-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: var(--padding-700);
-  }
-}
-
 .main-content {
   margin-bottom: var(--padding-500);
 }
 
 .main-content img {
-  max-width: 40%;
+  max-width: 100%;
   height: auto;
-  filter: grayscale() brightness(80%);
-  float: left;
   margin: 0 var(--padding-500) var(--padding-500) 0;
 }
 
@@ -200,10 +200,31 @@ body {
 
 .main-content p:first-of-type::first-letter {
   font-size: var(--fs-700);
-  font-family: "Brush Script MT", cursive;
+  font-family: "Good Vibes", cursive;
   line-height: 0.8;
 }
 
+@media (min-width: 50em) {
+  .main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--padding-700);
+  }
+
+  .main-content img {
+    float: left;
+    max-width: 40%;
+  }
+
+  .navbar {
+    flex-direction: row;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
 .side-content {
   border: 1px solid rgba(82, 82, 82, 0.8);
   border-radius: var(--padding-500);
