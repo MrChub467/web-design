@@ -60,7 +60,7 @@ body {
   }
 }
 
-.navbar a {
+.navbar ul a {
   color: white;
   text-decoration: none;
   position: relative;
@@ -71,7 +71,7 @@ body {
   }
 }
 
-.navbar a::after {
+.navbar ul a::after {
   content: "";
   position: absolute;
   height: 2px;
@@ -112,7 +112,7 @@ body {
 .arrow > p {
   transform: rotate(-45deg);
   margin-top: -10px;
-  /* font-size: 1.25rem; */
+  font-size: 1.25rem;
 }
 
 @keyframes appear {
