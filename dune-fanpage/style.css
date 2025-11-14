@@ -1,0 +1,243 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --clr-primary-200: #ffeab5;
+  --clr-primary-500: #ffca43;
+  --clr-primary-800: #8b4800;
+  --clr-primary-900: #482500;
+
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-200: #dddddd;
+  --clr-neutral-800: #2b2b2b;
+  --clr-neutral-900: #000000;
+
+  --fs-400: 0.75em;
+  --fs-500: 1rem;
+  --fs-600: 1.25rem;
+  --fs-650: 1.5rem;
+  --fs-700: 2rem;
+  --fs-800: 3rem;
+  --fs-900: 4.5rem;
+
+  --ff-normal: "IBM Plex Mono", monospace;
+}
+
+@font-face {
+  font-family: dune;
+  src: url(./img/Dune_Rise.ttf);
+}
+
+body {
+  font-family: var(--ff-normal);
+}
+
+nav {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--fs-400) var(--fs-600);
+  background-color: var(--clr-neutral-900);
+}
+
+.logo {
+  font-family: dune;
+}
+
+.logo h1 {
+  font-size: var(--fs-700);
+  background: linear-gradient(
+    to right,
+    var(--clr-primary-500),
+    var(--clr-primary-200),
+    var(--clr-primary-500),
+    var(--clr-primary-500)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.search-bar input {
+  background-color: var(--clr-neutral-800);
+  border: 1px solid #ffeab5;
+  border-radius: 4px;
+  padding: 8px;
+  color: var(--clr-primary-200);
+  width: 200px;
+}
+
+.search-bar input::placeholder {
+  color: var(--clr-primary-200);
+}
+
+.logo img {
+  display: none;
+}
+
+.main-nav {
+  background-color: var(--clr-neutral-800);
+  padding: var(--fs-400) var(--fs-600);
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style-type: none;
+
+  & a {
+    color: var(--clr-primary-500);
+    text-decoration: none;
+    font-size: var(--fs-600);
+  }
+}
+
+.header {
+  background-image: url(./img/dunePlanetBG.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 500px;
+}
+
+.header header {
+  height: 100%;
+  text-align: center;
+  backdrop-filter: brightness(70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--fs-400);
+}
+
+header h1 {
+  font-size: var(--fs-900);
+  color: var(--clr-primary-500);
+
+  & span {
+    font-size: 3.75rem;
+    font-family: dune;
+  }
+}
+
+header p {
+  color: var(--clr-primary-200);
+  font-size: var(--fs-600);
+}
+
+header button {
+  cursor: pointer;
+  padding: 8px 32px;
+  border-radius: 8px;
+  font-size: var(--fs-600);
+  font-weight: bold;
+  color: var(--clr-neutral-800);
+  background-image: linear-gradient(
+    to bottom,
+    var(--clr-primary-500),
+    var(--clr-primary-200)
+  );
+
+  &:hover {
+    background-image: linear-gradient(
+      to bottom,
+      var(--clr-primary-200),
+      var(--clr-primary-500)
+    );
+  }
+}
+
+::selection {
+  background-color: #ffeab580;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dune-daily {
+  text-align: center;
+  margin: var(--fs-800) 0;
+
+  & h2 {
+    font-size: var(--fs-800);
+    font-family: dune;
+    background: linear-gradient(
+      to right,
+      var(--clr-primary-500),
+      var(--clr-primary-200),
+      var(--clr-primary-500)
+    );
+    background-clip: text;
+    color: transparent;
+  }
+
+  & p {
+    font-size: var(--fs-600);
+  }
+}
+
+.cards {
+  display: grid;
+  place-content: center;
+
+  margin: 0 auto;
+
+  gap: var(--fs-800);
+  margin: 0 var(--fs-500);
+
+  & :nth-child(even) .info {
+    text-align: right;
+  }
+}
+
+@media (min-width: 50em) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+
+    max-width: 70%;
+
+    & :nth-child(even) .info {
+      text-align: left;
+    }
+  }
+
+  .card img {
+    order: -1;
+  }
+}
+
+.card {
+  display: flex;
+  gap: var(--fs-500);
+}
+
+.card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & :first-child {
+    color: var(--clr-neutral-800);
+    font-size: var(--fs-650);
+  }
+}
+
+.card img {
+  width: 200px;
+}
