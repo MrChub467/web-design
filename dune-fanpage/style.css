@@ -41,6 +41,9 @@ body {
 nav {
   display: grid;
   grid-template-rows: auto auto;
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 
 .logo-section {
@@ -53,6 +56,15 @@ nav {
 }
 
 .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 60px;
+  transform: translateY(-4px);
+  filter: brightness(80%);
 }
 
 .logo h1 {
@@ -89,10 +101,6 @@ nav {
 
 .search-bar input::placeholder {
   color: var(--clr-primary-200);
-}
-
-.logo img {
-  display: none;
 }
 
 .main-nav {
@@ -204,7 +212,7 @@ a:hover {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 545px) {
   .main-nav {
     display: none;
   }
